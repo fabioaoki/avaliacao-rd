@@ -26,7 +26,7 @@ public class ClientController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<?> createClient(@Valid @RequestBody ClientRequestDto clientRequestDto) throws ClientException {
+    public ResponseEntity<?> createClient(@RequestBody ClientRequestDto clientRequestDto) throws ClientException {
         try {
             log.info("Creating a new client");
             return ResponseEntity.ok(clientServiceBO.save(clientRequestDto));

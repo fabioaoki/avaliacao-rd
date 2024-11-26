@@ -77,6 +77,16 @@ public class ClientService implements ClientServiceBO {
         if (dto.getLastName() == null || dto.getLastName().trim().isEmpty()) {
             throw new ClientException(ErrorCode.INVALID_FIELD, "The 'lastName' field is mandatory and cannot be empty.");
         }
+        validSize(dto);
+    }
+
+    private static void validSize(ClientRequestDto dto) {
+        if(dto.getFirstName().length() > 255){
+            throw new ClientException(ErrorCode.INVALID_FIELD, "First name must not exceed 255 characters.");
+        }
+        if(dto.getLastName().length() > 255){
+            throw new ClientException(ErrorCode.INVALID_FIELD, "Last name must not exceed 255 characters.");
+        }
     }
 
     private static boolean containsInvalidCharacters(String name) {
