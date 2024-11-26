@@ -1,4 +1,4 @@
-package com.teste.rd.Teste.RD;
+package com.avaliacao.rd.client.RD;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
